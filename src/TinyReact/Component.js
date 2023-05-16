@@ -1,3 +1,4 @@
+import diff from "./diff";
 export default class Component {
   constructor(props) {
     this.props = props;
@@ -8,7 +9,10 @@ export default class Component {
     let virtualDOM = this.render();
     // 获取旧的 virtualDOM 对象进行比对
     let oldDOM = this.getDOM();
-    console.log(oldDOM);
+    // 获取容器
+    let container = oldDOM.parentNode;
+    // 实现 DOM diff 比对
+    diff(virtualDOM, container, oldDOM);
   }
   setDOM(dom) {
     this._dom = dom;

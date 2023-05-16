@@ -77,7 +77,6 @@ class Alert extends TinyReact.Component {
     this.setState({ title: "Changed Title" });
   }
   render() {
-    console.log(this.state);
     return (
       <div>
         {this.props.name}
